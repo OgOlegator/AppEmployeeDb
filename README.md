@@ -9,3 +9,5 @@
 Используемые NuGet пакеты:
 - Microsoft.EntityFrameworkCore.SqlServer
 - Microsoft.EntityFrameworkCore.Tools
+
+Строка подключения к БД хранится в AppEmployeeDb/SD
