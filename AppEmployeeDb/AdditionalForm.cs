@@ -46,7 +46,7 @@ namespace AppEmployeeDb
 
             await _repository.CreateUpdateEmployee(employee);
 
-            ClearFields();
+            Close();
         }
 
         private void SetFields(Employee employee)
@@ -56,14 +56,6 @@ namespace AppEmployeeDb
             Birthday.Value = employee.Birthday;
             JobTitle.Text = employee.JobTitle;
             Subdivision.Text = employee.Subdivision;
-        }
-
-        private void ClearFields()
-        {
-            Name.Text = string.Empty;
-            Birthday.Value = DateTime.Now;
-            JobTitle.Text = string.Empty;
-            Subdivision.Text = string.Empty;
         }
     }
 }

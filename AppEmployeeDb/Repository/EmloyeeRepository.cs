@@ -22,7 +22,11 @@ namespace AppEmployeeDb.Repository
         {
             if(employee.Id > 0)
             {
-                _ = _db.Update(employee);
+                var changeEmployee = _db.Employees.FirstOrDefault(x => x.Id == employee.Id);
+                changeEmployee.Name = employee.Name;
+                changeEmployee.Birthday = employee.Birthday;
+                changeEmployee.Subdivision = employee.Subdivision;
+                changeEmployee.JobTitle = employee.JobTitle;
             }
             else
             {
