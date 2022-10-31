@@ -22,7 +22,7 @@ namespace AppEmployeeDb.Repository
         {
             if(employee.Id > 0)
             {
-                _db.Employees.Update(employee);
+                _ = _db.Update(employee);
             }
             else
             {

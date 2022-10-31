@@ -28,13 +28,6 @@ namespace AppEmployeeDb
             UpdateDataGrid();
         }
 
-        private async void UpdateDataGrid()
-        {
-            var listEmployees = await _repository.GetEmployee();
-
-            employeesDataGrid.DataSource = listEmployees;
-        }
-
         private async void deleteButton_Click(object sender, EventArgs e)
         {
             var id = (int) employeesDataGrid.SelectedRows[0].Cells[0].Value;
@@ -48,6 +41,31 @@ namespace AppEmployeeDb
             }
 
             UpdateDataGrid();
+        }
+
+        private void changeButton_Click(object sender, EventArgs e)
+        {
+            var cellsRow = employeesDataGrid.SelectedRows[0].Cells;
+
+            var emloyee = new Employee
+            {
+                Id = (int) cellsRow[0].Value,
+                Name = (string) cellsRow[1].Value,
+                Birthday = (DateTime) cellsRow[2].Value,
+                JobTitle = (string) cellsRow[3].Value,
+                Subdivision = (string) cellsRow[4].Value,
+            };
+
+            new AdditionalForm(_repository, emloyee).ShowDialog();
+
+            UpdateDataGrid();
+        }
+
+        private async void UpdateDataGrid()
+        {
+            var listEmployees = await _repository.GetEmployee();
+
+            employeesDataGrid.DataSource = listEmployees;
         }
     }
 }

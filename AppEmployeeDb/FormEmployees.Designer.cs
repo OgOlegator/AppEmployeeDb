@@ -145,6 +145,7 @@
             this.changeButton.TabIndex = 3;
             this.changeButton.Text = "Изменить";
             this.changeButton.UseVisualStyleBackColor = true;
+            this.changeButton.Click += new System.EventHandler(this.changeButton_Click);
             // 
             // FormEmployees
             // 

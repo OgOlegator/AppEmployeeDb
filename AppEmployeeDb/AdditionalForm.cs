@@ -52,10 +52,10 @@ namespace AppEmployeeDb
         private void SetFields(Employee employee)
         {
             _id = employee.Id;
-            Name.Text = string.Empty;
-            Birthday.Value = DateTime.Now;
-            JobTitle.Text = string.Empty;
-            Subdivision.Text = string.Empty;
+            Name.Text = employee.Name;
+            Birthday.Value = employee.Birthday;
+            JobTitle.Text = employee.JobTitle;
+            Subdivision.Text = employee.Subdivision;
         }
 
         private void ClearFields()
